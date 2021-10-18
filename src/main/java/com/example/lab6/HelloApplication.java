@@ -66,7 +66,7 @@ public class HelloApplication extends Application {
             info.setText("Chargement de l'image 2 terminé");
         });
         image3.setOnAction((ae) -> {
-            imageView.setImage(new Image("file:image3.jpg"));
+            imageView.setImage(new Image("file:image0.jpg"));
             info.setText("Chargement de l'image 3 terminé");
         });
         imageView.setEffect(colorAdjust);
@@ -90,7 +90,7 @@ public class HelloApplication extends Application {
             info.setText("Chargement de l'image 2 terminé");
         });
         img3.setOnAction((ae) -> {
-            imageView.setImage(new Image("file:image3.jpg"));
+            imageView.setImage(new Image("file:image0.jpg"));
             info.setText("Chargement de l'image 3 terminé");
         });
         reinit.setOnAction((ae) -> {
@@ -100,8 +100,6 @@ public class HelloApplication extends Application {
             saturation.setValue(0);
             info.setText("Réinitialisation des ajustements de couleurs");
         });
-
-
 
         MenuBar menuBar = new MenuBar(fichiers, actions);
         BorderPane borderPane = new BorderPane();
