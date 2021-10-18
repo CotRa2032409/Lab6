@@ -7,10 +7,8 @@ import javafx.scene.control.*;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -54,7 +52,16 @@ public class HelloApplication extends Application {
         Label teint = new Label("Teinte");
         Label sat = new Label("Saturation");
         Label info = new Label("Bienvenue!");
-
+        info.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
+        info.setBackground(new Background(new BackgroundFill(Color.LIGHTGREY, null, null)));
+        Tooltip infoBright = new Tooltip("Rend l'image plus claire ou plus sombre");
+        luminosite.setTooltip(infoBright);
+        Tooltip infoCont = new Tooltip("Diminue ou augmente la différence entre les couleurs");
+        contraste.setTooltip(infoCont);
+        Tooltip infoTeinte = new Tooltip("Change la teinte (couleur) de l'image");
+        teinte.setTooltip(infoTeinte);
+        Tooltip infoSat = new Tooltip("Diminue ou augmente l'intensité des couleurs");
+        saturation.setTooltip(infoSat);
 
         //setOnAction
         image1.setOnAction((ae) -> {
@@ -111,7 +118,7 @@ public class HelloApplication extends Application {
         borderPane.setCenter(hBox);
         borderPane.setBottom(info);
         hBox.setOnContextMenuRequested((ae) ->
-            contextMenu.show(hBox, ae.getScreenX(), ae.getScreenY())
+                contextMenu.show(hBox, ae.getScreenX(), ae.getScreenY())
         );
 
         Scene scene = new Scene(borderPane);
